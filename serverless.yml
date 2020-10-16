@@ -1,0 +1,15 @@
+service: serverless-podcast-template
+provider:
+  name: aws
+  runtime: nodejs12.x
+functions:
+  feed:
+    handler: handler.feed
+    events:
+      - http:
+          path: feed.xml
+          method: any
+          cors: true
+    environment:
+      AIRTABLE_BASE_ID: 
+      AIRTABLE_API_KEY: 
